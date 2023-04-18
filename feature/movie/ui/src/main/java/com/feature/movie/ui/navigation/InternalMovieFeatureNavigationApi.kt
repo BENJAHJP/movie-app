@@ -2,6 +2,7 @@ package com.feature.movie.ui.navigation
 
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.core.common.navigation_constants.MovieFeature
 import com.core.feature_api.FeatureApi
 
 object InternalMovieFeatureNavigationApi: FeatureApi {
@@ -10,12 +11,10 @@ object InternalMovieFeatureNavigationApi: FeatureApi {
         navGraphBuilder: androidx.navigation.NavGraphBuilder
     ) {
         navGraphBuilder.navigation(
-            startDestination = "movie",
-            route = "MOVIE_NESTED_NAVIGATION",
+            startDestination = MovieFeature.MovieScreenRoute,
+            route = MovieFeature.nestedRoute,
         ){
-            composable("movie"){
-
-            }
+            composable(MovieFeature.MovieScreenRoute)
         }
     }
 }
