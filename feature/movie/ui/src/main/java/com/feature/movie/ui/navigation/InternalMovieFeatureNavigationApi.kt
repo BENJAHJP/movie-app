@@ -14,7 +14,7 @@ object InternalMovieFeatureNavigationApi: FeatureApi {
             route = "MOVIE_NESTED_NAVIGATION",
         ){
             composable("movie"){
-                MovieScreen()
+
             }
         }
     }
