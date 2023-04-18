@@ -48,7 +48,6 @@ dependencies {
     implementation Retrofit.logging
 
     //dagger hilt
-    implementation
-    kapt
-    kapt
+    implementation DaggerHilt.hilt
+    kapt DaggerHilt.hiltCompiler
 }
