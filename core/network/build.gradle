@@ -50,4 +50,5 @@ dependencies {
     //dagger hilt
     implementation DaggerHilt.hilt
     kapt DaggerHilt.hiltCompiler
+    kapt DaggerHilt.hiltAndroidCompiler
 }
