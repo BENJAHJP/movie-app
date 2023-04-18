@@ -4,6 +4,7 @@ import com.core.network.data_providers.MovieDataProviders
 import com.feature.movie.data.mapper.toDomainMovieList
 import com.feature.movie.domain.model.Movie
 import com.feature.movie.domain.repository.MovieRepository
+import javax.inject.Inject
 
 class MovieRepositoryImpl @Inject constructor(
     private val movieDataProviders: MovieDataProviders
