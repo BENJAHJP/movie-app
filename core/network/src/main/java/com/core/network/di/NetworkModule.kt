@@ -1,6 +1,7 @@
 package com.core.network.di
 
 import com.core.network.MovieApi
+import com.core.network.data_providers.MovieDataProviders
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,12 +15,16 @@ import javax.inject.Singleton
 object NetworkModule {
 
     @Provides
-    @Singleton
     fun provideMovieApi(): MovieApi{
         return Retrofit.Builder()
             .baseUrl("https://api.themoviedb.org/3/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MovieApi::class.java)
+    }
+
+    @Provides
+    fun provideMovieDataProvider(movieApi: MovieApi): MovieDataProviders {
+        return MovieDataProviders(movieApi)
     }
 }
