@@ -1,6 +1,11 @@
 object Version{
     const val core = "1.8.0"
 
+    //jetpack compose
+    const val viewModel = "2.6.0-alpha02"
+    const val navigation = "2.6.0-alpha01"
+    const val hiltNavigation = "1.0.0"
+
     //hilt
     const val hilt = "2.44.2"
     const val hiltCompiler = "1.0.0"
@@ -19,12 +24,21 @@ object Deps{
     const val constraintLayout = ""
     const val testRunner = ""
 }
+
+// jetpack compose
+object JetpackCompose {
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.viewModel}"
+    const val navigation = "androidx.navigation:navigation-compose:${Version.navigation}"
+    const val hiltNavigation  = "androidx.hilt:hilt-navigation-compose:${Version.hiltNavigation}"
+}
+// dagger hilt
 object DaggerHilt {
     const val hilt = "com.google.dagger:hilt-android:${Version.hilt}"
     const val hiltAndroidCompiler = "com.google.dagger:hilt-compiler:${Version.hilt}"
     const val hiltCompiler = "androidx.hilt:hilt-compiler:${Version.hiltCompiler}"
     const val hiltComposeNavigation = "androidx.hilt:hilt-navigation-compose:${Version.hiltComposeNavigation}"
 }
+//retrofit
 object Retrofit {
     const val retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
     const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Version.retrofit}"
