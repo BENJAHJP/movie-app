@@ -51,6 +51,8 @@ android {
 dependencies {
 
     implementation project(":feature:movie:ui")
+    implementation project(":core:common")
+    implementation project(":core:feature_api")
     implementation Deps.core
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
     implementation 'androidx.activity:activity-compose:1.5.1'
@@ -70,4 +72,6 @@ dependencies {
     implementation DaggerHilt.hilt
     kapt DaggerHilt.hiltAndroidCompiler
     kapt DaggerHilt.hiltCompiler
+
+    implementation JetpackCompose.navigation
 }
