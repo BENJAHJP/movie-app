@@ -5,7 +5,7 @@ import androidx.navigation.navigation
 import com.core.common.navigation_constants.MovieFeature
 import com.core.feature_api.FeatureApi
 
-object InternalMovieFeatureNavigationApi: FeatureApi {
+internal object InternalMovieFeatureNavigationApi: FeatureApi {
     override fun registerGraph(
         navController: androidx.navigation.NavHostController,
         navGraphBuilder: androidx.navigation.NavGraphBuilder
@@ -14,7 +14,7 @@ object InternalMovieFeatureNavigationApi: FeatureApi {
             startDestination = MovieFeature.MovieScreenRoute,
             route = MovieFeature.nestedRoute,
         ){
-            composable(MovieFeature.MovieScreenRoute)
+
         }
     }
 }
