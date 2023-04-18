@@ -16,3 +16,4 @@ rootProject.name = "Movie"
 include ':app'
 include ':feature:movie:data'
 include ':feature:movie:domain'
+include ':feature:movie:ui'
