@@ -37,6 +37,7 @@ dependencies {
     implementation project(":core:feature_api")
     implementation project(":core:common")
     implementation project(":feature:movie:domain")
+    implementation project(":feature:movie:data")
 
     implementation platform('androidx.compose:compose-bom:2022.10.00')
     implementation 'androidx.core:core-ktx:1.8.0'
