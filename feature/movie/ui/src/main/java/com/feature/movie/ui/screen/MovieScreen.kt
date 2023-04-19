@@ -47,12 +47,11 @@ fun MovieScreen(
             }
             LazyColumn {
                 items(state.movies){
-                    Column(){
-                        AsyncImage(
-                            model = it.imageUrl,
-                            contentScale = ContentScale.Crop
-                        )
-                    }
+                    SingleItem(
+                        image = it.imageUrl,
+                        title = it.title,
+                        onClick = {}
+                    )
                 }
             }
         }
