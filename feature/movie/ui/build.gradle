@@ -46,11 +46,20 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation Deps.ui
+    implementation Deps.graphics
+    implementation Deps.material
+    implementation Deps.preview
 
+    //navigation
     implementation JetpackCompose.navigation
     implementation JetpackCompose.viewModel
 
+    //hilt
     implementation DaggerHilt.hilt
     kapt DaggerHilt.hiltCompiler
     kapt DaggerHilt.hiltAndroidCompiler
+
+    //coil
+    implementation Coil.coil
 }

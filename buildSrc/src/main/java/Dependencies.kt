@@ -1,6 +1,9 @@
 object Version{
     const val core = "1.8.0"
 
+    //coil
+    const val coil = "2.2.2"
+
     //jetpack compose
     const val viewModel = "2.6.0-alpha02"
     const val navigation = "2.6.0-alpha01"
@@ -19,10 +22,18 @@ object Version{
 
 object Deps{
     const val core = "androidx.core:core-ktx:${Version.core}"
+    const val ui = "androidx.compose.ui:ui"
+    const val graphics = "androidx.compose.ui:ui-graphics"
+    const val preview = "androidx.compose.ui:ui-tooling-preview"
+    const val material = "androidx.compose.material3:material3"
     const val appCompat = ""
     const val androidMaterial = ""
     const val constraintLayout = ""
     const val testRunner = ""
+}
+// coil
+object Coil{
+    const val coil = "io.coil-kt:coil-compose:${Version.coil}"
 }
 
 // jetpack compose

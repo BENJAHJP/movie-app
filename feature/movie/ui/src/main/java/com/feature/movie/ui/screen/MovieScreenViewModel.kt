@@ -31,7 +31,11 @@ class MovieScreenViewModel @Inject constructor(
     private val _state = mutableStateOf(MainScreenState())
     val state: State<MainScreenState> = _state
 
-    val API_KEY = ""
+    fun setQuery(s: String){
+        _query.value = s
+    }
+
+    val API_KEY = "20cb18d90f887a4a07bc494d61bd8330"
     init {
         viewModelScope.launch {
             _query.debounce(1000).collectLatest {
