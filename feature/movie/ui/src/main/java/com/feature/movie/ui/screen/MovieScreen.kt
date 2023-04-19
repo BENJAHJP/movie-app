@@ -15,13 +15,14 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MovieScreen(
-    viewModel: MovieScreenViewModel
+    viewModel: MovieScreenViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
     val query = viewModel.query.collectAsState()
