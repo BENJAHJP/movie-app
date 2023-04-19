@@ -59,6 +59,7 @@ dependencies {
     implementation DaggerHilt.hilt
     kapt DaggerHilt.hiltCompiler
     kapt DaggerHilt.hiltAndroidCompiler
+    implementation DaggerHilt.hiltComposeNavigation
 
     //coil
     implementation Coil.coil
