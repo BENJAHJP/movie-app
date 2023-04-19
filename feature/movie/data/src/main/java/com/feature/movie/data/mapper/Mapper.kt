@@ -6,8 +6,10 @@ import com.feature.movie.domain.model.Movie
 fun MovieListResponse.toDomainMovieList(): List<Movie> {
     return this.results.map {
         Movie(
-            imageUrl = it.poster_path,
+            imageUrl = makeFullUrl(it.poster_path),
             title = it.title
         )
     }
 }
+
+fun makeFullUrl(path: String) = "https://image.tmdb.org/t/p/w500/${path}"
