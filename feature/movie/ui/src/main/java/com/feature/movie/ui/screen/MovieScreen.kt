@@ -62,10 +62,10 @@ fun MovieScreen(
                     horizontalArrangement = Arrangement.spacedBy(16.dp),
                     verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    items(state.movies){
+                    items(state.movies){ movie ->
                         SingleItem(
-                            image = it.imageUrl,
-                            title = it.title,
+                            image = movie.imageUrl ?:"",
+                            title = movie.title ?: "",
                             onClick = {}
                         )
                     }
