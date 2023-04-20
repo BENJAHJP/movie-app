@@ -19,7 +19,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MovieScreen(
-    viewModel: MovieScreenViewModel = hiltViewModel()
+    viewModel: MovieScreenViewModel
 ) {
     val state = viewModel.state.value
     val query = viewModel.query.collectAsState()
