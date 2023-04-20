@@ -1,6 +1,7 @@
 package com.core.network.di
 
 import com.core.network.MovieApi
+import com.core.network.constants.Constants
 import com.core.network.data_providers.MovieDataProviders
 import dagger.Module
 import dagger.Provides
@@ -16,7 +17,7 @@ object NetworkModule {
     @Provides
     fun provideMovieApi(): MovieApi{
         return Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/")
+            .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MovieApi::class.java)

@@ -28,7 +28,7 @@ fun SingleItem(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(100.dp)
+            .height(250.dp)
             .clickable { onClick() }
             .clip(RoundedCornerShape(10.dp)),
         contentAlignment = Alignment.TopStart

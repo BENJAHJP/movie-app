@@ -6,8 +6,8 @@ import com.feature.movie.domain.model.Movie
 fun MovieListResponse.toDomainMovieList(): List<Movie> {
     return this.results.map {
         Movie(
-            imageUrl = makeFullUrl(it.poster_path),
-            title = it.title
+            imageUrl = makeFullUrl(it?.poster_path ?:""),
+            title = it?.title
         )
     }
 }
