@@ -19,7 +19,6 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@OptIn(FlowPreview::class)
 @HiltViewModel
 class MovieScreenViewModel @Inject constructor(
     private val getMovieListUseCase: GetMovieListUseCase
