@@ -3,6 +3,9 @@ package com.feature.movie.ui.screen
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Search
@@ -47,17 +50,17 @@ fun MovieScreen(
                         Alignment.Center
                     )
                 )
-            }
-            if (state.message.isNotBlank()){
+            } else if (state.message.isNotBlank()){
                 Text(state.message)
-            }
-            LazyColumn {
-                items(state.movies){
-                    SingleItem(
-                        image = it.imageUrl,
-                        title = it.title,
-                        onClick = {}
-                    )
+            } else {
+                LazyVerticalGrid(columns = GridCells.Fixed(2)) {
+                    items(state.movies){
+                        SingleItem(
+                            image = it.imageUrl,
+                            title = it.title,
+                            onClick = {}
+                        )
+                    }
                 }
             }
         }

@@ -16,7 +16,7 @@ object NetworkModule {
     @Provides
     fun provideMovieApi(): MovieApi{
         return Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/")
+            .baseUrl("https://api.themoviedb.org/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MovieApi::class.java)

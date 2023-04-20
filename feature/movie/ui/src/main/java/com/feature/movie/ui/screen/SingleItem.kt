@@ -32,10 +32,10 @@ fun SingleItem(
         contentAlignment = Alignment.TopStart
     ){
         AsyncImage(
-            modifier = Modifier.fillMaxSize(),
             model = image,
             contentScale = ContentScale.Crop,
-            contentDescription = ""
+            contentDescription = "",
+
         )
         Text(
             modifier = Modifier.padding(5.dp),
