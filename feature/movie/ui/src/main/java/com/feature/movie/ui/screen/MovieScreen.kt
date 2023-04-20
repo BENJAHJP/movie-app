@@ -4,8 +4,12 @@ import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -22,13 +26,17 @@ fun MovieScreen(
     viewModel: MovieScreenViewModel
 ) {
     val state = viewModel.state.value
-    val query = viewModel.query.collectAsState()
 
     Scaffold(
         topBar = {
             TextField(
-                value = query.value,
-                onValueChange = { viewModel.setQuery(it) }
+                value = viewModel.query,
+                onValueChange = { viewModel.query = it },
+                trailingIcon = {
+                    IconButton(onClick = { viewModel.getMovieList() }) {
+                        Icon(imageVector = Icons.Rounded.Search, contentDescription = "search")
+                    }
+                }
             )
         }
     ){

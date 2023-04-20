@@ -25,26 +25,15 @@ class MovieScreenViewModel @Inject constructor(
     private val getMovieListUseCase: GetMovieListUseCase
 ): ViewModel(){
 
-    private val _query = MutableStateFlow("")
-    val query: StateFlow<String> = _query
+    var query by mutableStateOf("")
 
     private val _state = mutableStateOf(MainScreenState())
     val state: State<MainScreenState> = _state
 
-    fun setQuery(s: String){
-        _query.value = s
-    }
-
     val API_KEY = "20cb18d90f887a4a07bc494d61bd8330"
-    init {
-        viewModelScope.launch {
-            _query.debounce(1000).collectLatest {
-                getMovieList(API_KEY,it)
-            }
-        }
-    }
-    fun getMovieList(apiKey: String, query: String){
-        getMovieListUseCase(apiKey, query).onEach { result ->
+
+    fun getMovieList(){
+        getMovieListUseCase(API_KEY, query).onEach { result ->
             when(result){
                 is Resource.Success -> {
                     _state.value = MainScreenState(movies = result.data ?: emptyList())
